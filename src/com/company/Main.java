@@ -1,19 +1,20 @@
 package com.company;
 
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 	// write your code here
         FileReader fileReader;
         FileWriter fileWriter;
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        String name = bufferedReader.readLine();
+        System.out.println("You have made changes:" + name);
         int ch;
         try {
-            fileReader = new FileReader("input.txt");
-            fileWriter = new FileWriter("output.txt");
+            fileReader = new FileReader("D:\\ooop\\input.txt");
+            fileWriter = new FileWriter("D:\\ooop\\output.txt");
 
             while ((ch = fileReader.read()) != -1) {
                 fileWriter.write(ch);
